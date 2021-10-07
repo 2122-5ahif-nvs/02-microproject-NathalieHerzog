@@ -47,8 +47,8 @@ After starting, access swagger: ```http://localhost:8080/swagger-ui/```
 
 ## Class Diagram 
 
-![](asciidocs/images/cld.png)
+![](docs/images/cld.png)
 
 ## Use-Case Diagram
 
-![](asciidocs/images/ucd.png)
+![](docs/images/ucd.png)
