@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor eventManager
+actor staff
+actor customer
+
+rectangle "Event Manager" {
+  (hire staff) -- eventManager
+  (create event) -- eventManager
+  customer -- (provide sponsorship)
+  customer -- (login/logout at event website)
+  (sign contract) -- staff
+  (be engaged in a job at event) -- staff
+  (validate login) -- staff
+}
+@enduml

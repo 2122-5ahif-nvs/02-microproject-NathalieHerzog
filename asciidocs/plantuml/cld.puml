@@ -1,0 +1,32 @@
+@startuml
+class Customer {
+    - userName : String
+    - email : String
+}
+class Event {
+    - title : String
+    - managerId : int
+    - startDate : Date
+    - endDate : Date
+}
+class Sponsorship {
+    - event : Event
+    - customer : Customer
+    - budget : BigDecimal
+  }
+class Staff {
+    - name : String
+    - salary : double
+    - isOccupied : bool
+}
+class Engagement {
+    - staffMember : Staff
+    - event : Event
+    - job : String
+}
+
+Customer "1" -- "1" Sponsorship : provides >
+Sponsorship "1..*" -- "1" Event : receives <
+Staff "1..*" -- "1..*" Engagement : has >
+Engagement "1..*" -- "1" Event : for >
+@enduml
