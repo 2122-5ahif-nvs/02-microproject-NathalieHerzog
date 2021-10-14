@@ -1,0 +1,168 @@
+### EVENT ###
+
+# returns one title
+GET http://localhost:8080/api/event/1
+Accept: application/json
+
+###
+
+# inserts new title5
+POST http://localhost:8080/api/event/
+Content-Type: application/json
+
+{
+  "title": "title5",
+  "managerId": 6,
+  "startDate": "04-05-2020",
+  "endDate": "11-12-2021",
+  "sponsorship":{"id": 1},
+  "engagement":{"id": 1}
+}
+
+###
+
+# returns all events
+GET http://localhost:8080/api/event/
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/event/1
+Content-Type: application/json
+
+###
+
+# updates event
+PUT http://localhost:8080/api/event/title5
+Content-Type: application/json
+
+{
+  "title": "inserted",
+  "managerId": 5,
+  "startDate": "04-05-2020",
+  "endDate": "11-12-2021",
+  "sponsorship":{"id": 1},
+  "engagement":{"id": 1}
+}
+
+### CUSTOMER ###
+
+# updates username
+PATCH http://localhost:8080/api/customer/username/1
+Content-Type: application/json
+
+{
+  "newUser": "newUsername1",
+  "newMail": "newEmail1",
+  "newSponsorship":{"id": 1}
+}
+
+###
+
+# updates email
+PUT http://localhost:8080/api/customer/email/1
+Content-Type: application/json
+
+{
+  "newUser": "newUsername2",
+  "newMail": "newMail@gmail.com",
+  "newSponsorship":{"id": 1}
+}
+
+###
+
+DELETE http://localhost:8080/api/customer/1
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/customer/
+Content-Type: application/json
+
+{
+  "userName" : "user4Inserted",
+  "email" : "insertedtest4@gmail.com",
+  "newSponsorship":{"id": 1}
+}
+
+###
+
+POST http://localhost:8080/api/customer/sponsorship
+Content-Type: application/json
+
+{
+  "newCustomerUser": "sponsorUser",
+  "newCustomerMail": "sponsorEmail@gmail.com",
+  "newEventTitle": "eventTitle",
+  "newStartDate" : "04-08-2020",
+  "newEndDate" : "15-08-2020"
+}
+
+###
+
+# returns all customers
+GET http://localhost:8080/api/customer/
+Content-Type: application/json
+
+###
+
+# returns one customer
+GET http://localhost:8080/api/customer/4
+Content-Type: application/json
+
+###
+
+# returns one customer name and staff name
+GET http://localhost:8080/api/customer-staff?id=1
+Content-Type: application/json
+
+
+### STAFF ###
+
+# updates staff (name)
+PUT http://localhost:8080/api/staff/4
+Content-Type: application/json
+
+{
+  "name" : "updateName",
+  "salary" : 30.0,
+  "isOccupied" : false,
+  "engagements":[{
+    "event": {},
+    "job": "testJobUpdated"
+  }]
+}
+
+###
+
+# delete staff
+DELETE http://localhost:8080/api/staff/1
+Content-Type: application/json
+
+###
+
+# insert new staff
+POST http://localhost:8080/api/staff/
+Content-Type: application/json
+
+{
+  "name" : "staffName4Inserted",
+  "salary" : 20.0,
+  "isOccupied" : true,
+  "engagements":[{
+    "event": {},
+    "job": "testJob"
+  }]
+}
+
+###
+
+# returns all staff
+GET http://localhost:8080/api/staff/
+Content-Type: application/json
+
+###
+
+# returns one staff
+GET http://localhost:8080/api/staff/4
+Content-Type: application/json
